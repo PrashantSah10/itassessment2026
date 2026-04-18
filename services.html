@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Prashant Motors | Premium Dealership</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="Image assets/Logo.jpg" alt="Dealership Logo">
+            <h1>Prashant Motors</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="services-section">
+        <h2 class="section-header">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Financing Options</h3>
+                <p>Get the best financing deals for your dream bike. We offer competitive rates and flexible payment plans.</p>
+                <a href="contact.html" class="btn">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Test Rides</h3>
+                <p>Experience the thrill before you buy. Schedule a test ride with our expert staff.</p>
+                <a href="contact.html" class="btn">Book Now</a>
+            </div>
+            <div class="service-card">
+                <h3>Maintenance & Repairs</h3>
+                <p>Keep your bike in top condition with our professional maintenance and repair services.</p>
+                <a href="contact.html" class="btn">Contact Us</a>
+            </div>
+            <div class="service-card">
+                <h3>Parts & Accessories</h3>
+                <p>Find genuine parts and premium accessories to customize and enhance your motorcycle.</p>
+                <a href="contact.html" class="btn">Shop Parts</a>
+            </div>
+            <div class="service-card">
+                <h3>Trade-Ins</h3>
+                <p>Trade in your old bike for credit towards a new one. Get a fair valuation from our experts.</p>
+                <a href="contact.html" class="btn">Get Quote</a>
+            </div>
+            <div class="service-card">
+                <h3>Insurance Assistance</h3>
+                <p>We help you find the right insurance coverage for your motorcycle at competitive rates.</p>
+                <a href="contact.html" class="btn">Get Help</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Prashant Motors. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight / 5 * 4;
+                
+                serviceCards.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    
+                    if (cardTop < triggerBottom) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); // Check on load
+        });
+    </script>
+
+</body>
+</html>
